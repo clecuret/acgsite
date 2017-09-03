@@ -52,6 +52,10 @@ meta robots is configured to avoid to be indeed by robots.
  * changement prix licence enfant de 22€ à 25 €  : pricing.html
  * changement numero tel 0607595671 : contact.html
 
+
+## Milestone Rentrée 2017-2018
+ * mise à jour des horaires et des montants de cotisation
+
 TODO
 ----
 
