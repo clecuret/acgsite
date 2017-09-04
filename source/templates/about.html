@@ -1,0 +1,100 @@
+{% extends "skeleton.html" %}
+
+  {% set breadcrumbh1 = 'A propos de <small>l\'Aïki Club Genlis</small>' %}
+  {% set breadcrumbtitle = 'Le&nbsp;club' %}
+
+
+  {% block content %}
+        <div class="row">
+
+            <div class="col-md-4">
+                <center><img class="img-responsive" src="images/logo.jpg"><center>
+                </div>
+                <div class="col-md-8">
+                    <h2>Bienvenue à l'Aïki Club de Genlis</h2>
+                    <p>Le club de <a href="http://www.mairie-genlis.fr/">Genlis</a> a été créé en septembre 2003, ce sont le docteur Jean Poupon et Gérard Méresse qui lui ont donné naissance.</p><p>Club indépendant depuis septembre 2005 il est ouvert à tous de 7 à 97 ans. L'Aikido est un art martial véritable art de vivre qui se pratique dans une ambiance conviviale et généreuse au sein du club.</p>
+                </div>
+
+            </div>
+            <!-- Our Customers -->
+
+            <div class="row">
+                <meta id="acg-org" itemprop="affiliation" content="Aïki-Club Genlis">
+                <div class="col-lg-12">
+                    <h2 class="page-header">Les professeurs</h2>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-6" itemscope itemtype="http://data-vocabulary.org/Person" itemref="acg-org">
+                    <img class="img-responsive img-customer img-rounded" src="images/professeur/gg.jpg" itemprop="photo">
+                    <center><h3><span itemprop="name">Gérard Méresse</span><br/></h3></center>
+                    <p><center>Ceinture noire 5 <span class="sup">ième</span> DAN&nbsp;
+                        <span class="tooltip-social facebook-link"><a href="https://www.facebook.com/gerard.meresse.3?fref=ts" itemprop="url" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square"></i></a>
+                        </span></center>
+                </p>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-6" itemscope itemtype="http://data-vocabulary.org/Person" itemref="acg-org">
+                    <img class="img-responsive img-customer img-rounded" src="images/professeur/laurent.jpg" itemprop="photo">
+                    <center><h3><span itemprop="name">Laurent Berton</span><br/>
+
+                    </h3></center>
+                    <p><center>Ceinture noire 2 <span class="sup">ième</span> DAN</center></p>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-6" itemscope itemtype="http://data-vocabulary.org/Person" itemref="acg-org">
+                    <img class="img-responsive img-customer img-rounded" src="images/professeur/dan2.jpg" itemprop="photo">
+                    <center><h3><span itemprop="name">Nicolas Sommela</span><br/>
+
+                    </h3></center>
+                    <p><center>Ceinture noire 2 <span class="sup">ième</span> DAN</center></p>
+                </div>
+
+            </div>
+            <!-- Team Member Profiles -->
+
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <h2 class="page-header">Le bureau</h2>
+                </div>
+
+                <div class="col-sm-4" itemscope itemtype="http://data-vocabulary.org/Person" itemref="acg-org">
+                    <img class="img-responsive  img-rounded" src="images/bureau/president2.jpg" itemprop="photo">
+                    <center><h3><span itemprop="name">Denis Jeanneret</span><br/><small><span itemprop="title">Président</span></small></h3></center>
+                </div>
+
+                <div class="col-sm-4" itemscope itemtype="http://data-vocabulary.org/Person" itemref="acg-org">
+                    <img class="img-responsive  img-rounded" src="images/bureau/secretaire2.jpg" itemprop="photo">
+                    <center><h3><span itemprop="name">Odile Labaune</span><br/><small><span itemprop="title">Secrétaire</span></small></h3></center>
+                </div>
+                               <div class="col-sm-4" itemscope itemtype="http://data-vocabulary.org/Person" itemref="acg-org">
+                    <img class="img-responsive  img-rounded" src="images/professeur/laurent.jpg" itemprop="photo">
+                    <center><h3><span itemprop="name">Laurent Berton</span><br/><small><span itemprop="title">Trésorier</span></small></h3></center>
+                </div>
+            </div>
+            <div class="row">
+ 
+
+                <div class="col-sm-4" itemscope itemtype="http://data-vocabulary.org/Person" itemref="acg-org">
+                    <img class="img-responsive  img-rounded" src="images/nophoto.jpg" itemprop="photo">
+                    <center><h3><span itemprop="name">Corinne Taisant</span><br/><small><span itemprop="title">Secrétaire adjoint</span></small></h3></center>
+                </div>
+
+                <div class="col-sm-4" itemscope itemtype="http://data-vocabulary.org/Person" itemref="acg-org">
+                    <img class="img-responsive  img-rounded" src="images/bureau/tresorieradjoint.jpg" itemprop="photo">
+                    <center><h3><span itemprop="name">Guy Morin</span><br/><small><span itemprop="title">Trésorier adjoint, communication</span></small></h3></center>
+                </div>
+                 <div class="col-sm-4" itemscope itemtype="http://data-vocabulary.org/Person" itemref="acg-org">
+                    <img class="img-responsive  img-rounded" src="images/nophoto.jpg" itemprop="photo">
+                    <center><h3><span itemprop="name">Jean Christophe Féty</span><br/><small><span itemprop="title">Président d'honneur</span></small></h3></center>
+                </div>
+            </div>
+        
+
+
+
+        </div>
+        <!-- /.container -->
+
+  
+{% endblock %}

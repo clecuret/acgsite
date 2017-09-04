@@ -1,0 +1,24 @@
+            <div class="col-sm-{% if offers|length==3 %}4{% else %}3{% endif %}">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading text-warning">
+                        <strong>{{offer.name}}</strong>
+                    </div>
+                    <div class="panel-body">
+                        <h3 class="panel-title price">{{offer.price}}
+                            <span class="price-cents">00</span>
+                            <span class="price-month">an.</span>
+                        </h3>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">{{offer.licence}}</li>
+                        {% if offer.age %}
+                        <li class="list-group-item">{{offer.age}}</li>
+                        {% endif %}
+                        {% if offer.cond %}
+                        <li class="list-group-item">{{offer.cond}}</li>
+                        {% endif %}
+                        <li class="list-group-item">Certificat médical obligatoire</li>
+                        <li class="list-group-item">Payable en 3 fois</li>
+                    </ul>
+                </div>
+            </div>

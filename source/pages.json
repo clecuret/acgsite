@@ -1,0 +1,12 @@
+[  
+   { "name":"index.html", "title":"Accueil - Adultes" },
+   { "name":"jeunes.html", "title":"Jeunes" },
+   { "name":"about.html", "title":"A propos - Club" },
+   { "name":"contact.html", "title":"Contact - Plan d'accès" },
+   { "name":"pricing.html", "title":"Cotisations" },
+   { "name":"faq.html", "title":"FAQ" },
+   { "name":"history.html", "title":"Histoire" },
+   { "name":"portfolio-3-col.html", "title":"Photothèque" }
+   
+]
+

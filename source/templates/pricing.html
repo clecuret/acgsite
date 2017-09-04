@@ -1,0 +1,44 @@
+{% extends "skeleton.html" %}
+
+  {% set breadcrumbh1 = 'Cotisations <small>annuelles</small>' %}
+  {% set breadcrumbtitle = 'Cotisations' %}
+
+  {% set offers = [{'name':'Jeune','price':'75€','licence':'Intègre 25€ licence FFAAA','age':'Entre 7 et 14 ans'},
+                   {'name':'Adolescent','price':'105€','licence':'Intègre 35€ licence FFAAA','age':'Entre 14 et 16 ans au cours de l\'année civile'},
+                   {'name':'Etudiant, Lycéen','price':'115€','licence':'Intègre 35€ licence FFAAA','age':'17 ans et plus au cours de l\'année civile', 'cond': 'S\'applique à la 2 ième personne d\'une famille'},
+                   {'name':'Adulte','price':'135€','licence':'Intègre 35€ licence FFAAA'}] %}
+  {% block content %}
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading text-warning">
+                        <strong>Essai gratuit (2 cours maximum)</strong>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Certificat médical obligatoire; prévoir une tenue de sport résistante (ni short, ni débardeur) ou un kimono</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for offer in offers %}
+            {{ include('render_offer.html') }}
+            {% endfor %}
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <h3 class="page-header"><i class="fa fa-money text-danger"></i> A quoi sert la cotisation ?</h2>
+                    <p>La cotisation nous permet de faire face aux coûts de fonctionnement du club : frais de location, assurances, frais administratifs,  frais de communication, frais d’organisation de stage, et investissements matériels (armes, petit métériel)...
+                    </p><p>La cotisation est valable 1 an : de début septembre au mi juin suivant (indicatif). Des cours d’Aïkido sont régulièrement  maintenus durant les vacances scolaires. Les cours peuvent être annulés en fonction de certaines circonstances (indisponibilité des enseignants pour des raisons médicales, professionnelles ou autre, cas d’épidémie grave qui ferait courir un risque aux élèves, indisponibilité des locaux...).</p><p>Un prorata avec un tarif mensuel prédéfini est applicable pour toute inscription après le 1er janvier. Aucun remboursement n’est possible.</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h3 class="page-header"><i class="fa fa-plus-square text-danger"></i> Le certificat médical</h2>
+                        <p>Un certificat médical de non contre indication à la pratique de l’Aïkido est nécessaire pour participer aux cours. Ce certificat est obligatoire pour l’inscription ainsi que pour les cours d’essais.</p>
+                    </div>
+
+                </div>
+{% endblock %}

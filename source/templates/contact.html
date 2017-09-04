@@ -1,0 +1,64 @@
+{% extends "skeleton.html" %}
+
+  {% set breadcrumbh1 = 'Plan d\'accès <small>Venez nous rejoindre !</small>' %}
+  {% set breadcrumbtitle = 'Nous&nbsp;trouver' %}
+
+
+  {% block content %}
+<div class="row">
+    <div class="col-lg-6">
+      <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+      <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?z=14&amp;q=loc:47.2392753+5.2243773&amp;output=embed"></iframe>
+  </div>
+      <div class="col-lg-6">
+<img class="img-responsive text-center" style="width:100%" src="http://maps.googleapis.com/maps/api/streetview?size=500x350&location=47.239647,5.22395&pitch=-0.76&heading=140.50&sensor=false"/>
+</div>
+
+</div><!-- /.row -->
+
+<div class="row">
+
+    <div class="col-sm-8">
+      <h3>Ecrivez nous !</h3>
+      <p>Si vous voulez en savoir plus et que vous n'avez pas l'occasion de passer nous voir au dojo, n'hésitez pas à nous envoyer un message sur info@aikiclub-genlis.fr avec vos questions. Nous essaierons d'y répondre rapidement.</p>
+      
+</div>
+
+<div class="col-sm-4">
+
+    <span itemscope itemtype="http://schema.org/LocalBusiness" itemref="_openingHoursSpecification1 _openingHoursSpecification2"><h3 itemprop="name">Aïki Club Genlis</h3>
+      <h4>Dojo David DOUILLET</h4>
+      <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+
+        <span itemprop="streetAddress">31 Avenue du Général de GAULLE</span><br/>
+
+        <span itemprop="postalCode">21110</span> 
+        <span itemprop="addressLocality">GENLIS</span><br/>
+    </p>
+    <p><i class="fa fa-phone"></i> <abbr title="Téléphone">T</abbr>: 
+        <span itemprop="telephone">06.07.59.56.71</span> (après 18h00)</p>
+        <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>: <a href="mailto:info@aikiclub-genlis.fr">
+            <meta itemprop="email" content="info@aikiclub-genlis.fr">info@aikiclub-genlis.fr</a></p></span>
+            <p>
+                <meta id="_opens6" itemprop="opens" content="T18:00">
+                <meta id="_closes4" itemprop="closes" content="T21:45">
+                <meta id="_opens7" itemprop="opens" content="T20:30">
+                <meta id="_closes5" itemprop="closes" content="T22:00"><i class="fa fa-clock-o"></i> <abbr title="Horaires">H</abbr>: 
+                <span id="_openingHoursSpecification1" itemprop="openingHoursSpecification" itemscope itemtype="http://schema.org/OpeningHoursSpecification" itemref="_closes4 _opens6">
+                    <span itemprop="dayOfWeek" itemscope itemtype="http://schema.org/DayOfWeek">
+                        <span itemprop="name">Mercredi</span> </span></span>18:00 - 21:45 / 
+                        <span id="_openingHoursSpecification2" itemprop="openingHoursSpecification" itemscope itemtype="http://schema.org/OpeningHoursSpecification" itemref="_closes5 _opens7">
+                            <span itemprop="dayOfWeek" itemscope itemtype="http://schema.org/DayOfWeek">
+                                <span itemprop="name">Vendredi</span></span></span>: 20:30-22:00</p>
+                                <ul class="list-unstyled list-inline list-social-icons">
+                                    <li class="tooltip-social facebook-link"><a href="https://www.facebook.com/aikiclubgenlis.aikido?fref=ts" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+                                    <li class="tooltip-social google-plus-link"><a href="https://plus.google.com/110281383462156714559" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+                                </ul>
+                            </div>
+
+                        </div><!--  /.row  -->
+
+                    </div><!-- /.container -->
+
+                       
+{% endblock %}

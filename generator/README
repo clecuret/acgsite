@@ -1,0 +1,11 @@
+to setup env  (in this directory): 
+
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+mv composer.phar composer
+composer require "twig/twig:^2.0"
+
+to generate the web site :
+
+php main.php

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+{{ include('head.html') }}
+<body>
+    {{ include('navigation.html') }}
+    
+    {% block index %}{% endblock %}
+    <div class="container">
+      {% block breadcrumb %}
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header">{{ breadcrumbh1|raw }}
+                </h1>
+                <ol class="breadcrumb">
+                    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="index.html" itemprop="url"><span itemprop="title">Accueil</span></a></li>
+                    <li class="active" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">{{breadcrumbtitle}}</span></li>
+                </ol>
+            </div>
+
+        </div>
+      {% endblock %}
+      {% block content %}{% endblock %}
+    </div>
+
+    {{ include('footer.html') }}
+  {{ include('scripts.html') }}
+  {% block extrascript %}{% endblock %}
+ </body>
+</html>

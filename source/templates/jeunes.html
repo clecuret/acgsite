@@ -1,0 +1,26 @@
+{% extends "skeleton.html" %}
+
+  {% set breadcrumbh1 = 'Cours Jeunes <small>de 7 à 14 ans</small>' %}
+  {% set breadcrumbtitle = 'Jeunes' %}
+
+
+  {% block content %}
+    <div class="row">
+        <div id="mainnews" class="col-lg-12 col-md-12">
+            <h3>Reprise des cours enfant le mercredi 6 septembre 2017 à 18h00.</h3>
+        </div>
+    </div>
+    <br/>
+    <div class="row ">
+        <div class="col-lg-12 section-colored text-center">
+            <h1>Horaire du cours enfant</h1>
+            <h3>Mercredi de 18H00 à 19H00</h3>
+            <h7>&nbsp;</h7>
+        </div>
+    </div>
+    {{ include('endbodyjeunes.html') }}
+
+{% endblock %}
+{% block extrascript %}
+<script src="js/isotope.pkgd.min.js"></script><script src="js/imagesloaded.pkgd.min.js"></script><script type="text/javascript" charset="utf-8" async defer> var $container = $('.isotope');$container.isotope({itemSelector: '.element-item',layoutMode: 'fitRows'}); imagesLoaded($container, function() {$container.isotope('layout');});</script>
+{% endblock %}
