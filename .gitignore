@@ -1,1 +1,6 @@
 LISEZ-MOI
+output/*
+generator/vendor/*
+generator/composer
+generator/composer.lock
+generator/composer.json
