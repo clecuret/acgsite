@@ -1,4 +1,3 @@
-.gitignore
 LISEZ-MOI
 output/*
 generator/vendor/*
