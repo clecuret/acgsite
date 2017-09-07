@@ -7,8 +7,8 @@
    {{ include('slider.html') }}
     <div class="row ">
       <div id="mainnews" class="col-lg-12 col-md-12">
-          <h3>Reprise des cours adulte le mercredi 6 septembre 2017 à 20h15.</h3>
-          <h4>Réunion d'information au Forum des Associations de Genlis le samedi 2 septembre 2017 de 13H30 à 18H00.</h4>
+          <h3>{{mainnews}}</h3>
+          <h4>{{subnews}}</h4>
       </div>
     </div>
 
@@ -22,13 +22,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8">
-                    <h3>Le Mercredi :<br/>19H15-20H15 Cours adolescents<br/>
-					20H15-21H45 Cours adultes débutants/confirmés</h3>
-                </div>
-                <div class="col-lg-4">
-                    <h3>Le Vendredi :<br/>20H30-21H45 Cours tous niveaux</h3>
-                </div>
+                {% for day,timeslot in timeslots %}
+                {{ include('render_timeslot.html') }}
+                {% endfor %}
             </div>
             <!-- /.row -->
         </div>

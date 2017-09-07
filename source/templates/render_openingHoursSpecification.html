@@ -1,0 +1,3 @@
+              <span itemprop="openingHoursSpecification" itemtype="http://schema.org/OpeningHoursSpecification">
+              <span itemprop="dayOfWeek" href="http://schema.org/{{timeslot.class}}"" />{{day}} <time itemprop="opens" content="{{timeslot.min}}:00"> {{timeslot.min}}</time> - <time itemprop="closes" content="{{timeslot.max}}:00"> {{timeslot.max}} </time></span>
+              {% if (timeslots|length)>loop.index %}/{% endif %}

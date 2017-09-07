@@ -1,0 +1,22 @@
+{
+  "index": {
+    "mainnews": "Reprise des cours adulte le mercredi 6 septembre 2017 à 20h15.",
+    "subnews": "Réunion d'information au Forum des Associations de Genlis le samedi 2 septembre 2017 de 13H30 à 18H00."
+  },
+  "jeunes":{
+    "mainnews": "Reprise des cours enfant le mercredi 6 septembre 2017 à 18h00.",
+    "subnews": ""
+  },
+  "timeslots":[
+    {"id": 1, "name": "",  "day":"Mercredi","start": "18:00", "end": "19:00","page":"jeunes"},
+    {"id": 2, "name": "Cours adolescents", "day":"Mercredi","start": "19:15", "end": "20:15","page":"index"},
+    {"id": 3, "name": "Cours adultes",  "day":"Mercredi","start": "20:15", "end": "21:45","page":"index"},
+    {"id": 4, "name": "Cours tous niveaux",  "day":"Vendredi","start": "20:30", "end": "21:45","page":"index"}
+  ],
+  "prices":[
+    {"id": 1, "name": "Jeune",  "price":75,"licence": 25, "minage": 7,"maxage":13,"cond":""},
+    {"id": 2, "name": "Adolescent",  "price":105,"licence": 35, "minage": 14,"maxage":16,"cond":""},
+    {"id": 3, "name": "Etudiant, Lycéen",  "price":115,"licence": 35, "minage": 17,"maxage":"","cond":"S'applique à la 2 ième personne d'une famille"},
+    {"id": 4, "name": "Adulte",  "price":135,"licence": 35, "minage": "","maxage":"","cond":""}
+  ]
+}

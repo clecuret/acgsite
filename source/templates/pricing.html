@@ -3,10 +3,6 @@
   {% set breadcrumbh1 = 'Cotisations <small>annuelles</small>' %}
   {% set breadcrumbtitle = 'Cotisations' %}
 
-  {% set offers = [{'name':'Jeune','price':'75€','licence':'Intègre 25€ licence FFAAA','age':'Entre 7 et 14 ans'},
-                   {'name':'Adolescent','price':'105€','licence':'Intègre 35€ licence FFAAA','age':'Entre 14 et 16 ans au cours de l\'année civile'},
-                   {'name':'Etudiant, Lycéen','price':'115€','licence':'Intègre 35€ licence FFAAA','age':'17 ans et plus au cours de l\'année civile', 'cond': 'S\'applique à la 2 ième personne d\'une famille'},
-                   {'name':'Adulte','price':'135€','licence':'Intègre 35€ licence FFAAA'}] %}
   {% block content %}
         <div class="row">
 
@@ -22,7 +18,7 @@
             </div>
         </div>
         <div class="row">
-            {% for offer in offers %}
+            {% for offer in prices %}
             {{ include('render_offer.html') }}
             {% endfor %}
         </div>

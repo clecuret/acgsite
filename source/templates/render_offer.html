@@ -4,15 +4,18 @@
                         <strong>{{offer.name}}</strong>
                     </div>
                     <div class="panel-body">
-                        <h3 class="panel-title price">{{offer.price}}
+                        <h3 class="panel-title price">{{offer.price}}€
                             <span class="price-cents">00</span>
                             <span class="price-month">an.</span>
                         </h3>
                     </div>
                     <ul class="list-group">
-                        <li class="list-group-item">{{offer.licence}}</li>
-                        {% if offer.age %}
-                        <li class="list-group-item">{{offer.age}}</li>
+                        <li class="list-group-item">Intègre {{offer.licence}}€ licence FFAAA</li>
+                        {% if (offer.minage and offer.maxage) %}
+                        <li class="list-group-item">Entre {{offer.minage}} et {{offer.maxage}} ans au cours de l'année civile</li>
+                        {% endif %}
+                        {% if (offer.minage and not(offer.maxage)) %}
+                        <li class="list-group-item">{{offer.minage}} ans et plus au cours de l'année civile</li>
                         {% endif %}
                         {% if offer.cond %}
                         <li class="list-group-item">{{offer.cond}}</li>

@@ -7,17 +7,27 @@
   {% block content %}
     <div class="row">
         <div id="mainnews" class="col-lg-12 col-md-12">
-            <h3>Reprise des cours enfant le mercredi 6 septembre 2017 à 18h00.</h3>
+          <h3>{{mainnews}}</h3>
+          <h4>{{subnews}}</h4>
         </div>
     </div>
     <br/>
     <div class="row ">
-        <div class="col-lg-12 section-colored text-center">
+    <div class=" col-lg-12 section-colored text-center">
+            <div class="row ">
+                <div class="col-lg-12">
             <h1>Horaire du cours enfant</h1>
-            <h3>Mercredi de 18H00 à 19H00</h3>
-            <h7>&nbsp;</h7>
         </div>
     </div>
+            <div class="row">
+                {% for day,timeslot in timeslots %}
+                {{ include('render_timeslot.html') }}
+                {% endfor %}
+            </div>
+            <!-- /.row -->
+    </div>
+    </div>
+    
     {{ include('endbodyjeunes.html') }}
 
 {% endblock %}

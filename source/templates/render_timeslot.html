@@ -1,0 +1,7 @@
+                <div class="col-lg-{% if timeslots|length==2 %}6{% else %}12{% endif %}">
+                    <h3>{{day}}
+  					{% for line in timeslot.desc %}
+                     {% if timeslots|length>1  %}<br>{% endif %}{{line}}
+                    {% endfor %}
+                    </h3>
+                </div>
