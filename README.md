@@ -56,7 +56,7 @@ meta robots is configured to avoid to be indeed by robots.
 ## Milestone Rentrée 2017-2018
  * mise à jour des horaires et des montants de cotisation
  * big changes in this project : new structure of project to generate static web site from twig templates : directory generator contains instructions; You now need php cli to build the web site (generated in dir output)
-
+ * addition of simple admin form (angularjs+xeditable+mailto)
 TODO
 ----
 

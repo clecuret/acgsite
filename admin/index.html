@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration Aikiclub genlis</title>
+    <!-- Bootstrap 3 css    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Angular.js -->
+    <script src="angular/angular.min.js"></script>
+    <!-- Angular-xeditable -->
+    <link href="angular-xeditable/css/xeditable.css" rel="stylesheet">
+    <link href="angular-xeditable/css/fix.css" rel="stylesheet">
+    <link href="../source/baseContent/css/bootstrap.css" rel="stylesheet">
+    <link href="../source/baseContent/css/aikiclubgenlis.css" rel="stylesheet">
+    <script src="angular-xeditable/js/xeditable.js"></script>
+    <script src="ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway:300">
+    <!-- app.js -->
+    <script src="app.js"></script>
+    <style type="text/css">
+      .editable-empty, .editable-empty:hover, .editable-empty:focus, a.editable-empty, a.editable-empty:hover, a.editable-empty:focus {
+    font-style: normal;
+    color: #111111;
+    text-decoration: none;
+}
+    </style>
+
+  </head>
+  <body style="padding: 20px" ng-controller="Ctrl">
+  <h1 style="text-align:center">Administration du site web AïkiClub Genlis</h1>
+    <div class="container" >
+        <div class="row ">
+      <div class="col-lg-12 col-md-12">
+          <h3>1 / Messages </h3>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-lg-12 col-md-12">
+          <h4>sur la page index.html</h4>
+      </div>
+    </div>
+    <div class="row ">
+      <div id="mainnews" class="col-lg-12 col-md-12" >
+          <h3><a href="#" e-style="width: 800px" e-required e-placeholder="Reprise des cours adulte le mercredi 6 septembre 2017 à 20h15."  editable-text="data.index.mainnews">{{ data.index.mainnews || "Reprise des cours adulte le mercredi 6 septembre 2017 à 20h15." }}</a></h3>
+          <h4><a href="#" e-style="width: 800px" editable-text="data.index.subnews">{{ data.index.subnews || "Réunion d'information au Forum des Associations de Genlis le samedi 2 septembre 2017 de 13H30 à 18H00."}}</a></h4>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-lg-12 col-md-12">
+          <h4>sur la page jeunes.html</h4>
+      </div>
+    </div>
+    <div class="row ">
+        <div id="mainnews" class="col-lg-12 col-md-12">
+            <h3><a href="#" e-style="width: 800px" e-required e-placeholder="Suivez-nous sur facebook" editable-text="data.jeunes.mainnews">{{ data.jeunes.mainnews || "Reprise des cours enfant le mercredi 6 septembre 2017 à 18h00."}}</a></h3>
+            <h4><a href="#" e-style="width: 800px" editable-text="data.jeunes.subnews">{{ data.jeunes.subnews || "&nbsp;"}}</a></h4>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+ <div class="row ">
+      <div class="col-lg-12 col-md-12">
+          <h3>2 / Horaires des cours</h3>
+      </div>
+ </div>
+
+        <!-- /.container -->
+ <div class="table-responsive" >
+  <table class="table table-striped text-center">
+  <thead>
+    <tr style="font-weight: bold">
+      <th style="text-align:center">Description</th>
+      <th style="text-align:center">Jour</th>
+      <th style="text-align:center">Début</th>
+      <th style="text-align:center">Fin</th>
+      <th style="text-align:center">Page</th>
+      <th style="text-align:center">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="timeslot in data.timeslots">
+      <td>
+        <span editable-text="timeslot.name" e-name="name" e-form="rowform"> {{ timeslot.name || '' }} </span>
+      </td>
+      <td>
+        <span editable-select="timeslot.day" e-name="day"  e-form="rowform" e-ng-options="g.id as g.text for g in days"> {{ showDay(timeslot) }} </span>
+      </td>
+      <td>
+        <span editable-bstime="timeslot.start" e-name="start" e-form="rowform" e-show-meridian="false" e-minute-step="15" >
+         {{ (timeslot.start | date:"HH:mm") || 'empty' }}
+        </span>
+      </td>
+      <td>
+        <span editable-bstime="timeslot.end" e-name="end" e-form="rowform" e-show-meridian="false" e-minute-step="15"> {{ (timeslot.end | date:"HH:mm") || 'empty' }} </span>
+      </td>
+      <td>
+        <span editable-select="timeslot.page" e-name="page"  e-form="rowform" e-ng-options="g.id as g.text for g in pages"> {{ showPage(timeslot) }}  </span>
+      </td>
+      <td style="white-space: nowrap">
+        <form editable-form name="rowform" onbeforesave="saveTimeslot($data, timeslot.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == timeslot">
+          <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">Sauvegarder</button>
+          <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">Annuler</button>
+        </form>
+        <div class="buttons" ng-show="!rowform.$visible">
+          <button type="button" class="btn btn-primary" ng-click="rowform.$show()">Modifier</button>
+          <button type="button" class="btn btn-danger" ng-click="removeTimeslot($index)">Effacer</button>
+        </div>  
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-default" ng-click="addTimeslot()">Ajouter un horaire de cours</button>
+ </div>
+</div>
+
+<div class="container">
+ <div class="row ">
+      <div class="col-lg-12 col-md-12">
+          <h3>3 / Cotisations</h3>
+      </div>
+ </div>
+
+        <!-- /.container -->
+ <div class="table-responsive" >
+  <table class="table table-striped text-center">
+  <thead>
+    <tr style="font-weight: bold">
+      <th style="text-align:center">Description</th>
+      <th style="text-align:center">Cotisation (€}</th>
+      <th style="text-align:center">Licence (€)</th>
+      <th style="text-align:center">Age mini</th>
+      <th style="text-align:center">Age maxi</th>
+      <th style="text-align:center">Condition</th>
+      <th style="text-align:center">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="price in data.prices">
+      <td>
+        <span editable-text="price.name" e-name="name" e-form="rowform"> {{ price.name || '' }} </span>
+      </td>
+      <td>
+        <span editable-number="price.price" e-name="price"  e-form="rowform"> {{price.price || '100' }} </span>
+      </td>
+      <td>
+        <span editable-number="price.licence" e-name="licence"  e-form="rowform"> {{price.licence || '35' }} </span>
+      </td>
+      <td>
+        <span editable-number="price.minage" e-name="minage"  e-form="rowform"> {{price.minage || '' }} </span>
+      </td>
+      <td>
+        <span editable-number="price.maxage" e-name="maxage"  e-form="rowform"> {{price.maxage || '' }} </span>
+      </td>
+            <td>
+        <span editable-text="price.cond" e-name="cond" e-form="rowform"> {{ price.cond || '' }} </span>
+      </td>
+      <td style="white-space: nowrap">
+        <form editable-form name="rowform" onbeforesave="savePrice($data, price.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="insertedprice == price">
+          <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">Sauvegarder</button>
+          <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">Annuler</button>
+        </form>
+        <div class="buttons" ng-show="!rowform.$visible">
+          <button type="button" class="btn btn-primary" ng-click="rowform.$show()">Modifier</button>
+          <button type="button" class="btn btn-danger" ng-click="removePrice($index)">Effacer</button>
+        </div>  
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-default" ng-click="addPrice()">Ajouter une cotisation</button>
+ </div>
+
+ </div>
+
+<div class="container ">
+      <div class="col-lg-12 col-md-12">
+          <h3>4 / Et finalement</h3>
+      </div>
+  <div class="row text-center" >
+      <div class="col-lg-12 col-md-12">
+           <button type="button" class="btn btn-primary" ng-click="publish()">Publier ces informations sur le site</button>
+      </div>
+
+ </div>
+</div>
+
+
+  </body>
+</html>  
