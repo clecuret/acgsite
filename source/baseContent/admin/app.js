@@ -11,7 +11,7 @@ app.controller('Ctrl', function($scope,$window,$filter) {
 
   var data = {index: {
     mainnews: 'Reprise des cours adulte le mercredi 6 septembre 2017 à 20h15.',
-    subnews: 'Réunion d\'information au Forum des Associations de Genlis le samedi 2 septembre 2017 de 13H30 à 18H00.'
+    subnews: 'N\'hésitez pas à venir essayer (2 cours d\'essai gratuits).'
   },jeunes:{
     mainnews: 'Reprise des cours enfant le mercredi 6 septembre 2017 à 18h00.',
     subnews: ''
